@@ -75,7 +75,7 @@ export default defineComponent({
     const filteredCompanies = computed(() => {
       return _filter(companies.value, {
         isRemote: isRemote.value,
-        ...(selectedLocation.value ? { location: selectedLocation.value } : {}),
+        ...(selectedLocation.value != "All" ? { location: selectedLocation.value } : {}),
       });
     });
 
