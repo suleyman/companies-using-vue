@@ -1,8 +1,8 @@
 <template>
-  <div class="relative bg-white py-6 px-6 rounded-3xl w-full my-4 shadow-xl">
-    <div class="text-white flex items-center absolute p-2 rounded-full shadow-xl bg-red-500 left-4 -top-6">
+  <div class="relative animate-fade-in-up bg-white py-6 px-6 rounded-3xl w-full my-4 shadow-xl">
+    <div class="text-white flex items-center absolute p-2 rounded-full shadow-xl bg-green-400 left-4 -top-6">
       <!-- Logo  -->
-      <img src="https://www.arabam.com/apple-touch-icon.png" class="rounded-full" width="64" />
+      <img :src="`/company-logos/${companyData.logo}`" class="rounded-full" width="64" height="64" />
     </div>
     <div class="mt-12">
       <p class="text-xl font-semibold my-2">{{ companyData.name }}</p>
@@ -52,12 +52,6 @@
           <span class="mr-4">Remote</span>
           <span class="text-green-500 font-bold" v-if="companyData.isRemote">YES</span>
           <span class="text-red-500 font-bold" v-if="!companyData.isRemote">NO</span>
-        </p>
-      </div>
-      <div v-if="companyData.description">
-        <p class="font-light text-gray-500 text-sm">
-          {{ getDescription }}
-          <span v-if="getDescription && getDescription?.length >= 80">...</span>
         </p>
       </div>
     </div>

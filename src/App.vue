@@ -1,17 +1,27 @@
 <template>
   <div class="bg-gray-100 pt-12 min-h-screen">
-    <div class="container mx-auto">
+    <div class="container mx-auto p-4 md:p-0">
       <section class="p-12 bg-white rounded-3xl">
-        <form class="flex items-center">
+        <form class="flex lg:items-center flex-col lg:flex-row">
           <div class="mr-12">
-            <input id="isRemote" type="checkbox" v-model="isRemote" />
-            <label for="isRemote">Remote</label>
+            <div class="flex justify-between items-center cursor-pointer" @click="isRemote = !isRemote">
+              <label class="mr-4">Remote</label>
+              <div
+                class="w-14 h-8 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out"
+                :class="{ 'bg-green-400': isRemote }"
+              >
+                <div
+                  class="bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ease-in-out"
+                  :class="{ 'translate-x-6': isRemote }"
+                ></div>
+              </div>
+            </div>
           </div>
-          <div>
-            <label for="location">Location</label>
+          <div class="mt-4 lg:mt-0">
+            <label class="mr-4">Location</label>
             <div class="relative inline-block text-gray-700">
               <select
-                class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"
+                class="w-full h-10 pl-3 pr-6 cursor-pointer text-base placeholder-gray-600 border rounded-lg appearance-none outline-none focus:ring-1 focus:ring-green-400"
                 v-model="selectedLocation"
               >
                 <option :value="null">All</option>
@@ -28,10 +38,13 @@
               </div>
             </div>
           </div>
+          <div class="mt-4 lg:mt-0 lg:ml-auto" v-if="filteredCompanies && filteredCompanies.length > 0">
+            <span class="text-green-400 font-bold">{{ filteredCompanies.length }}</span> companies listed
+          </div>
         </form>
       </section>
       <transition>
-        <section class="pt-12 md:px-0 px-12 grid md:grid-cols-4 grid-cols-1 gap-8">
+        <section class="mt-12 grid md:grid-cols-4 grid-cols-1 gap-8">
           <Company v-for="(company, index) in filteredCompanies" :company-data="company" />
         </section>
       </transition>
