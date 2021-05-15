@@ -4,31 +4,20 @@
     "website": "https://www.arabam.com",
     "logo": "arabam.png",
     "isRemote": true,
-    "location": "Istanbul / Turkey",
-    "description": "Arabam.com is the leader used car selling platform in Turkey. It’s established in 2000"
+    "location": "Istanbul / Turkey"
   },
   {
-    "name": "Cimri.com",
-    "website": "https://www.arabam.com",
-    "logo": "arabam.png",
+    "name": "Jigsaw",
+    "website": "https://jigsawcreate.com",
+    "logo": "jigsaw.png",
     "isRemote": true,
-    "location": "Ankara / Turkey",
-    "description": "Arabam.com is the leader used car selling platform in Turkey. It’s established in 2000"
+    "location": "London / UK"
   },
   {
-    "name": "Kariyer.net",
-    "website": "https://www.arabam.com",
-    "logo": "arabam.png",
+    "name": "HereTask",
+    "website": "https://www.heretask.com",
+    "logo": "heretask.png",
     "isRemote": true,
-    "location": "United Kingdom",
-    "description": "Arabam.com is the leader used car selling platform in Turkey. It’s established in 2000"
-  },
-  {
-    "name": "Trendyol.com",
-    "website": "https://www.arabam.com",
-    "logo": "arabam.png",
-    "isRemote": true,
-    "location": "Istanbul / Turkey",
-    "description": "Arabam.com is the leader used car selling platform in Turkey. It’s established in 2000"
+    "location": "Gold Coast QLD, Australia"
   }
 ]
