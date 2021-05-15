@@ -24,7 +24,7 @@
                 class="w-full h-10 pl-3 pr-6 cursor-pointer text-base placeholder-gray-600 border rounded-lg appearance-none outline-none focus:ring-1 focus:ring-green-400"
                 v-model="selectedLocation"
               >
-                <option :value="null">All</option>
+                <option value="All">All</option>
                 <option v-for="location in companyLocations" :value="location">{{ location }}</option>
               </select>
               <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
@@ -69,7 +69,7 @@ export default defineComponent({
     const companies: Ref<ICompany[]> = ref(companiesData);
     const companyLocations = _uniq(companies.value.map((company: ICompany) => company.location));
 
-    const selectedLocation: Ref<string | null> = ref(null);
+    const selectedLocation: Ref<string> = ref("All");
     const isRemote: Ref<boolean> = ref(true);
 
     const filteredCompanies = computed(() => {
